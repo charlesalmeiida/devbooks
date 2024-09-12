@@ -1,10 +1,14 @@
-import { SearchIcon } from '../../icons/search.svg?react'
+import { InputHTMLAttributes } from 'react'
+import SearchIcon from '../../icons/search.svg?react'
+import { Container } from './SearchBox.styles'
 
-export function SearchBox() {
+type SearchBoxProps = InputHTMLAttributes<HTMLInputElement>
+
+export function SearchBox(props: SearchBoxProps) {
   return (
-    <>
+    <Container>
       <SearchIcon />
-      <input type="text" />
-    </>
+      <input placeholder='Qual livro você quer buscar?' {...props} />
+    </Container>
   )
 }
