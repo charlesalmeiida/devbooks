@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react'
 import { Navigate, useLocation, useSearchParams } from 'react-router-dom'
 import { googleBooksApi } from '../../services/googleBooksApi'
 import { Thumbnail } from '../../components/Thumbnail/Thumbnail'
+import { Container, Subtitle, Title } from './Books.styles'
 
 interface Book {
   id: string
   volumeInfo: {
     title: string
+    subtitle: string
     description: string
     imageLinks?: {
       thumbnail: string
@@ -37,7 +39,7 @@ export function Books() {
   }
 
   return (
-    <>
+    <Container>
       <h1>Exibir resultados dos livros</h1>
 
       {books && (
@@ -50,11 +52,12 @@ export function Books() {
                 bgColor="#d9d9d9"
               />
 
-              <h1>{books.volumeInfo.title}</h1>
+              <Title>{books.volumeInfo.title}</Title>
+              <Subtitle>{books.volumeInfo.subtitle}</Subtitle>
             </li>
           ))}
         </ul>
       )}
-    </>
+    </Container>
   )
 }
