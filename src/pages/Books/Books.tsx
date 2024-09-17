@@ -1,20 +1,10 @@
 import { useEffect, useState } from 'react'
-import { Navigate, useLocation, useSearchParams } from 'react-router-dom'
+import { Link, Navigate, useLocation, useSearchParams } from 'react-router-dom'
 import { googleBooksApi } from '../../services/googleBooksApi'
 import { Thumbnail } from '../../components/Thumbnail/Thumbnail'
 import { Container, Subtitle, Title } from './Books.styles'
+import { BookState as Book } from '../BookDetail'
 
-interface Book {
-  id: string
-  volumeInfo: {
-    title: string
-    subtitle: string
-    description: string
-    imageLinks?: {
-      thumbnail: string
-    }
-  }
-}
 interface BooksSate {
   totalItems: number
   items: Book[]
@@ -45,16 +35,18 @@ export function Books() {
       {books && (
         <ul>
           {books.items.map((books) => (
-            <li key={books.id}>
-              <Thumbnail
-                thumbnail={books.volumeInfo.imageLinks?.thumbnail}
-                title={books.volumeInfo.title}
-                bgColor="#d9d9d9"
-              />
+            <Link to={`/books/${books.id}`}>
+              <li key={books.id}>
+                <Thumbnail
+                  thumbnail={books.volumeInfo.imageLinks?.thumbnail}
+                  title={books.volumeInfo.title}
+                  bgColor="#d9d9d9"
+                />
 
-              <Title>{books.volumeInfo.title}</Title>
-              <Subtitle>{books.volumeInfo.subtitle}</Subtitle>
-            </li>
+                <Title>{books.volumeInfo.title}</Title>
+                <Subtitle>{books.volumeInfo.subtitle}</Subtitle>
+              </li>
+            </Link>
           ))}
         </ul>
       )}
