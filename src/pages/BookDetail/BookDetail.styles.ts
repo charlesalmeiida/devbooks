@@ -41,3 +41,10 @@ export const Description = styled.p`
   font-size: 18px;
   margin-bottom: 16px;
 `
+
+export const SpinnerContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  width: 100%;
+`

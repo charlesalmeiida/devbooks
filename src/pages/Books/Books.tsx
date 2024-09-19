@@ -4,6 +4,7 @@ import { googleBooksApi } from '../../services/googleBooksApi'
 import { Thumbnail } from '../../components/Thumbnail/Thumbnail'
 import { Container, Subtitle, Title } from './Books.styles'
 import { BookState as Book } from '../BookDetail'
+import { Spinner } from '../../components/Spinner'
 
 interface BooksSate {
   totalItems: number
@@ -32,7 +33,7 @@ export function Books() {
     <Container>
       <h1>Exibir resultados dos livros</h1>
 
-      {books && (
+      {books ? (
         <ul>
           {books.items.map((books) => (
             <Link to={`/books/${books.id}`}>
@@ -49,6 +50,8 @@ export function Books() {
             </Link>
           ))}
         </ul>
+      ) : (
+        <Spinner />
       )}
     </Container>
   )

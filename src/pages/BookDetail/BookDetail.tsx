@@ -6,12 +6,14 @@ import {
   Container,
   Content,
   Description,
+  SpinnerContainer,
   Subtitle,
   Title
 } from './BookDetail.styles'
 import { Thumbnail } from '../../components/Thumbnail/Thumbnail'
 import parse from 'html-react-parser'
 import ArrowLeft from '../../icons/arrow-left.svg?react'
+import { Spinner } from '../../components/Spinner'
 
 export interface BookState {
   id: string
@@ -44,7 +46,7 @@ export function BookDetail() {
 
   return (
     <Container>
-      {book && (
+      {book ? (
         <>
           <BackButton onClick={handleGoBack}>
             <ArrowLeft />
@@ -61,6 +63,10 @@ export function BookDetail() {
             <Description>{parse(book.volumeInfo.description)}</Description>
           </Content>
         </>
+      ) : (
+        <SpinnerContainer>
+          <Spinner />
+        </SpinnerContainer>
       )}
     </Container>
   )
