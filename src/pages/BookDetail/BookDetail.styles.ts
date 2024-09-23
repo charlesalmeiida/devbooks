@@ -4,6 +4,10 @@ export const Container = styled.div`
   display: flex;
   height: 100%;
   width: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
 export const BackButton = styled.button`
@@ -16,6 +20,18 @@ export const BackButton = styled.button`
   position: fixed;
   left: 20px;
   top: 20px;
+
+  @media (max-width: 1024px) {
+    height: 32px;
+    width: 32px;
+    left: 12px;
+  }
+
+  @media (max-width: 768px) {
+    width: 28px;
+    height: 28px;
+    left: 8px;
+  }
 `
 
 export const Content = styled.div`
@@ -25,21 +41,39 @@ export const Content = styled.div`
   width: 50%;
   padding: 48px;
   overflow-y: scroll;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    overflow-y: inherit;
+  }
 `
 
 export const Title = styled.h1`
   font-size: 54px;
   margin-bottom: 16px;
+
+  @media (max-width: 768px), (max-width: 1024px) {
+    font-size: 24px;
+  }
 `
 
 export const Subtitle = styled.h2`
   font-weight: normal;
   font-size: 36px;
   margin-bottom: 16px;
+
+  @media (max-width: 1024px) {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
 `
 export const Description = styled.p`
   font-size: 18px;
   margin-bottom: 16px;
+
+  @media (max-width: 1024px) {
+    font-size: 14px;
+  }
 `
 
 export const SpinnerContainer = styled.div`

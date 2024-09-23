@@ -32,6 +32,12 @@ export const Container = styled.div`
   a {
     text-decoration: none;
   }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 24px;
+    }
+  }
 `
 
 const clampText = css`
@@ -49,6 +55,10 @@ export const Title = styled.h2`
   color: #333;
 
   ${clampText}
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `
 
 export const Subtitle = styled.h3`
@@ -57,4 +67,8 @@ export const Subtitle = styled.h3`
   color: #333;
 
   ${clampText}
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `

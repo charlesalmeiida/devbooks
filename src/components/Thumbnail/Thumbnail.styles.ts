@@ -26,6 +26,15 @@ const containerCustomStyles = {
       width: 100%;
       color: #fff;
     }
+
+    @media (max-width: 768px) {
+      width: 100%;
+      height: 400px;
+
+      svg {
+        width: 120px;
+      }
+    }
   `
 }
 
@@ -35,6 +44,10 @@ const imageCustomStyles = {
   `,
   large: () => css`
     width: 50%;
+
+    @media (max-width: 768px) {
+      width: 180px;
+    }
   `
 }
 
