@@ -1,10 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { GlobalStyle } from './styles/global'
-import { Search } from './pages/Search'
-import { Books } from './pages/Books'
-import { BookDetail } from './pages/BookDetail'
 import { ThemeProvider } from 'styled-components'
 import { theme } from './styles/theme'
+import { SighnIn } from './pages/Auth/SignIn'
 
 export default function App() {
   return (
@@ -12,9 +10,7 @@ export default function App() {
       <GlobalStyle />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Search />} />
-          <Route path="/books" element={<Books />} />
-          <Route path="/books/:bookId" element={<BookDetail />} />
+          <Route path="/" element={<SighnIn />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
