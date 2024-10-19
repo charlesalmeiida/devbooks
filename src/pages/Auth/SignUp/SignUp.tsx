@@ -10,7 +10,7 @@ import {
   LogoContainer
 } from '../Auth.styles'
 
-export function SighnIn() {
+export function SignUp() {
   return (
     <Container>
       <FormContainer>
@@ -20,14 +20,18 @@ export function SighnIn() {
           </LogoContainer>
 
           <Heading>
-            <h1>Faça seu login</h1>
+            <h1>Cadastre-se de graça</h1>
             <p>
-              Não tem uma conta?{' '}
-              <Link to={'/cadastro'} color="secondary">
-                Cadastre-se
+              Já tem uma conta?{' '}
+              <Link to={'/'} color="secondary">
+                Entrar
               </Link>
             </p>
           </Heading>
+
+          <InputContainer>
+            <Input id="name" label="Nome completo" type="text" />
+          </InputContainer>
 
           <InputContainer>
             <Input id="email" label="Email" type="email" />
@@ -37,7 +41,7 @@ export function SighnIn() {
             <Input id="password" label="Senha" type="password" />
           </InputContainer>
 
-          <Button fullWidth>Entrar</Button>
+          <Button fullWidth>Cadastrar-se</Button>
         </div>
       </FormContainer>
     </Container>

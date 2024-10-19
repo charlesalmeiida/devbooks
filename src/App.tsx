@@ -3,6 +3,7 @@ import { GlobalStyle } from './styles/global'
 import { ThemeProvider } from 'styled-components'
 import { theme } from './styles/theme'
 import { SighnIn } from './pages/Auth/SignIn'
+import { SignUp } from './pages/Auth/SignUp'
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<SighnIn />} />
+          <Route path="/cadastro" element={<SignUp />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
