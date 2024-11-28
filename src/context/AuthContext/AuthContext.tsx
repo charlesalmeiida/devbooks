@@ -24,7 +24,7 @@ interface Session {
   refreshToken: string
 }
 
-interface AuthContextType {
+interface AuthContextData {
   isAuthenticated: boolean
   user?: User
   signIn: (user: SignInUser) => Promise<void>
@@ -32,7 +32,7 @@ interface AuthContextType {
   signOut: () => Promise<void>
 }
 
-export const AuthContext = createContext<AuthContextType>({} as AuthContextType)
+export const AuthContext = createContext<AuthContextData>({} as AuthContextData)
 
 export function AuthProvider({ children }: PropsWithChildren) {
   const [session, setSession] = useState<Session | null>(() => {

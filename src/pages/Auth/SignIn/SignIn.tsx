@@ -12,6 +12,7 @@ import {
   InputContainer,
   LogoContainer
 } from '../Auth.styles'
+import { useAuth } from '../../../hooks/useAuth'
 
 const validationSchema = z.object({
   email: z
@@ -33,8 +34,10 @@ export function SignIn() {
     resolver: zodResolver(validationSchema)
   })
 
+  const { signIn } = useAuth()
+
   const onSubmit: SubmitHandler<SignInForm> = async (data) => {
-    console.log(data)
+    await signIn(data)
   }
 
   return (
